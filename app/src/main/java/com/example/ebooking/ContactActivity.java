@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import android.widget.Toast;
+import android.widget.EditText;
 
 public class ContactActivity extends AppCompatActivity {
 
@@ -24,12 +26,18 @@ public class ContactActivity extends AppCompatActivity {
             return insets;
         });
 
+        EditText restaurantNameEditText = findViewById(R.id.restaurantNameEditText);
+        EditText personalNameEditText = findViewById(R.id.personalNameEditText);
+        EditText emailEditText = findViewById(R.id.emailEditText);
+
         Button sendButton = findViewById(R.id.sendButton);
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ContactActivity.this, ThanksActivity.class);
-                startActivity(intent);
+                Toast.makeText(ContactActivity.this, "¡Gracias! Nos pondremos en contacto a la brevedad", Toast.LENGTH_LONG).show();
+                restaurantNameEditText.setText("");
+                personalNameEditText.setText("");
+                emailEditText.setText("");
             }
         });
     }
