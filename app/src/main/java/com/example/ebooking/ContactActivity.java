@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.OnBackPressedDispatcher;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -26,6 +27,7 @@ public class ContactActivity extends AppCompatActivity {
         EditText emailEditText = findViewById(R.id.emailEditText);
 
         Button sendButton = findViewById(R.id.sendButton);
+
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,6 +35,14 @@ public class ContactActivity extends AppCompatActivity {
                 restaurantNameEditText.setText("");
                 personalNameEditText.setText("");
                 emailEditText.setText("");
+            }
+        });
+
+        Button cancelButton = findViewById(R.id.cancelButton);
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }
