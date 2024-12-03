@@ -4,15 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
-import androidx.activity.OnBackPressedDispatcher;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-import android.widget.Toast;
-import android.widget.EditText;
 
 public class ContactActivity extends AppCompatActivity {
 
@@ -31,10 +27,16 @@ public class ContactActivity extends AppCompatActivity {
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(ContactActivity.this, "¡Gracias! Nos pondremos en contacto a la brevedad", Toast.LENGTH_LONG).show();
-                restaurantNameEditText.setText("");
-                personalNameEditText.setText("");
-                emailEditText.setText("");
+                if (restaurantNameEditText.getText().toString().isEmpty() ||
+                        personalNameEditText.getText().toString().isEmpty() ||
+                        emailEditText.getText().toString().isEmpty()) {
+                    Toast.makeText(ContactActivity.this, "Debe completar todos los datos", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(ContactActivity.this, "¡Gracias! Nos pondremos en contacto a la brevedad", Toast.LENGTH_LONG).show();
+                    restaurantNameEditText.setText("");
+                    personalNameEditText.setText("");
+                    emailEditText.setText("");
+                }
             }
         });
 
