@@ -24,8 +24,8 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        Button reserveTableButton = findViewById(R.id.reserveTableButton);
-        reserveTableButton.setOnClickListener(new View.OnClickListener() {
+        Button contact = findViewById(R.id.contactButton);
+        contact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ContactActivity.class);

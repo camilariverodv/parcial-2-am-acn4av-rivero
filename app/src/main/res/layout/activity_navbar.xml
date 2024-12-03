@@ -8,17 +8,24 @@
     android:gravity="center_vertical">
 
     <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/arrow"
+        android:layout_marginEnd="12dp"/>
+
+    <ImageView
         android:id="@+id/navLogo"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:src="@drawable/logo" />
 
     <TextView
         android:id="@+id/navTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
         android:text="eBooking"
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        android:layout_marginStart="10dp" />
+        android:textSize="20sp" />
 </LinearLayout>

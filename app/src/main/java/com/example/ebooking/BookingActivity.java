@@ -3,6 +3,7 @@ package com.example.ebooking;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -44,6 +45,14 @@ public class BookingActivity extends AppCompatActivity {
             // Agrego el bookingCard al contenedor
             bookingListContainer.addView(bookingCard);
         }
+
+        ImageView backButton = findViewById(R.id.backButton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getOnBackPressedDispatcher().onBackPressed();
+            }
+        });
     }
 
     class Booking {
