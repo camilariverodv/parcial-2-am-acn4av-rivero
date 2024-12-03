@@ -20,5 +20,18 @@
             android:text="Reserva a nombre de: Cliente\nFecha: Fecha\nHora: Hora\nCantidad de comensales: Cantidad"
             android:textColor="#000000"
             android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="#f2493d"
+            android:layout_gravity="end"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:text="Cancelar reserva"
+            android:textColor="#eeeeee"
+            android:textSize="16sp" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>

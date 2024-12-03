@@ -3,18 +3,21 @@ package com.example.ebooking;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
+import android.content.Intent;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class BookingActivity extends AppCompatActivity {
     private List<Booking> bookings = new ArrayList<>();
+    private LinearLayout bookingListContainer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,20 +32,30 @@ public class BookingActivity extends AppCompatActivity {
         bookings.add(new Booking("Ana López", "11/12/2023", "18:00 hs", "6"));
         bookings.add(new Booking("Pedro Ruiz", "12/12/2023", "21:30 hs", "4"));
 
-        // Voy a construir mis cards dentro de este contenedor de activity_booking
-        LinearLayout bookingListContainer = findViewById(R.id.bookingListContainer);
-
+        bookingListContainer = findViewById(R.id.bookingListContainer);
         LayoutInflater inflater = LayoutInflater.from(this);
-        for (Booking booking : bookings) {
+        for (int i = 0; i < bookings.size(); i++) {
+            final int position = i;
+
             View bookingCard = inflater.inflate(R.layout.booking_card, bookingListContainer, false);
             TextView bookingDetailsTextView = bookingCard.findViewById(R.id.bookingDetailsTextView);
-            String bookingDetails = "Reserva a nombre de: " + booking.getCliente() +
-                    "\nFecha: " + booking.getFecha() +
-                    "\nHora: " + booking.getHora() +
-                    "\nCantidad de comensales: " + booking.getCantidadPersonas();
+            Button cancelButton = bookingCard.findViewById(R.id.cancelButton);
+
+            String bookingDetails = "Reserva a nombre de: " + bookings.get(i).getCliente() +
+                    "\nFecha: " + bookings.get(i).getFecha() +
+                    "\nHora: " + bookings.get(i).getHora() +
+                    "\nCantidad de comensales: " + bookings.get(i).getCantidadPersonas();
             bookingDetailsTextView.setText(bookingDetails);
 
-            // Agrego el bookingCard al contenedor
+            cancelButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    bookings.remove(position);
+                    bookingListContainer.removeAllViews();
+                    renderBookings();
+                    Toast.makeText(BookingActivity.this, "Reserva cancelada", Toast.LENGTH_SHORT).show();
+                }
+            });
             bookingListContainer.addView(bookingCard);
         }
 
@@ -50,9 +63,39 @@ public class BookingActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getOnBackPressedDispatcher().onBackPressed();
+                Intent intent = new Intent(BookingActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
+    }
+
+    private void renderBookings() {
+        LayoutInflater inflater = LayoutInflater.from(this);
+        for (int i = 0; i < bookings.size(); i++) {
+            final int position = i;
+            View bookingCard = inflater.inflate(R.layout.booking_card, bookingListContainer, false);
+            TextView bookingDetailsTextView = bookingCard.findViewById(R.id.bookingDetailsTextView);
+            Button cancelButton = bookingCard.findViewById(R.id.cancelButton);
+
+            String bookingDetails = "Reserva a nombre de: " + bookings.get(i).getCliente() +
+                    "\nFecha: " + bookings.get(i).getFecha() +
+                    "\nHora: " + bookings.get(i).getHora() +
+                    "\nCantidad de comensales: " + bookings.get(i).getCantidadPersonas();
+            bookingDetailsTextView.setText(bookingDetails);
+
+            cancelButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    bookings.remove(position);
+                    bookingListContainer.removeAllViews();
+                    renderBookings();
+                    Toast.makeText(BookingActivity.this, "Reserva cancelada", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            bookingListContainer.addView(bookingCard);
+        }
     }
 
     class Booking {

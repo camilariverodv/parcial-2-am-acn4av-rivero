@@ -9,7 +9,7 @@
         android:id="@+id/navbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        layout="@layout/activity_navbar" />
+        layout="@layout/navbar" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -60,8 +60,7 @@
             android:id="@+id/cancelButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10
-dp"
+            android:layout_marginTop="10dp"
             android:text="Cancelar" />
     </LinearLayout>
 </LinearLayout>
