@@ -54,13 +54,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:text="Enviar" />
+            android:text="Enviar"
+            android:backgroundTint="#ff2a40" />
 
         <Button
             android:id="@+id/cancelButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Cancelar" />
+            android:text="Cancelar"
+            android:backgroundTint="#ff2a40" />
     </LinearLayout>
 </LinearLayout>

@@ -58,7 +58,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/subtitleTextView"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintVertical_bias="0.5"
+        android:backgroundTint="#ff2a40" />
 
     <TextView
         android:id="@+id/questionTextView"
@@ -84,5 +85,6 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.742" />
+        app:layout_constraintVertical_bias="0.742"
+        android:backgroundTint="#ff2a40" />
 </androidx.constraintlayout.widget.ConstraintLayout>

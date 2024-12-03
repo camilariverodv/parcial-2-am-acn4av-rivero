@@ -44,7 +44,8 @@
             android:layout_marginTop="16dp"
             android:hint="Contraseña"
             android:minHeight="48dp"
-            android:padding="12dp" />
+            android:padding="12dp"
+            android:inputType="textPassword" />
 
         <Button
             android:id="@+id/loginSubmitButton"
@@ -52,6 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:baselineAligned="false"
-            android:text="Continuar" />
+            android:text="Continuar"
+            android:backgroundTint="#ff2a40" />
     </LinearLayout>
 </LinearLayout>
