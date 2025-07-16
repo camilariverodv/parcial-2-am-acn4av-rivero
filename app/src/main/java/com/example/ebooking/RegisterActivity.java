@@ -21,6 +21,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import android.util.Log;
+import android.widget.ImageView;
 
 
 public class RegisterActivity extends AppCompatActivity {
@@ -45,6 +46,16 @@ public class RegisterActivity extends AppCompatActivity {
         // Firebase Auth
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
+
+        ImageView backButton = findViewById(R.id.backButton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         registerSubmitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,12 +91,11 @@ public class RegisterActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             Toast.makeText(RegisterActivity.this, "Usuario creado", Toast.LENGTH_SHORT).show();
 
-                            // Redirigir inmediatamente
+                            // Redirigir
                             Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                             startActivity(intent);
                             finish();
 
-                            // Guardar datos en Firestore en segundo plano
                             String userId = mAuth.getCurrentUser().getUid();
                             Map<String, Object> user = new HashMap<>();
                             user.put("name", name);

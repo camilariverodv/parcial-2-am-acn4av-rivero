@@ -54,7 +54,9 @@ public class ContactActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getOnBackPressedDispatcher().onBackPressed();
+                Intent intent = new Intent(ContactActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
