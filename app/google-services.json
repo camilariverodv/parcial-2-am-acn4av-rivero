@@ -1,0 +1,76 @@
+{
+  "project_info": {
+    "project_number": "474130123278",
+    "project_id": "ebooking-acn4av-rivero",
+    "storage_bucket": "ebooking-acn4av-rivero.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:474130123278:android:b337a131d2e7b86c620a5f",
+        "android_client_info": {
+          "package_name": "com.example.ebooking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "474130123278-6actgqbjcm656mblkhbaqdu6dfsrtpgc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7oWOWSG630w2tajI1OE3OaTBIILpdyD4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "474130123278-6actgqbjcm656mblkhbaqdu6dfsrtpgc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:474130123278:android:10232cdc655068f2620a5f",
+        "android_client_info": {
+          "package_name": "eBooking_.acn4av_rivero"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "474130123278-ia2e90rjlf87n8ioqoe2imgv65u01dtk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "eBooking_.acn4av_rivero",
+            "certificate_hash": "40840270d7052231c33f80d35ffd46d42402a531"
+          }
+        },
+        {
+          "client_id": "474130123278-6actgqbjcm656mblkhbaqdu6dfsrtpgc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7oWOWSG630w2tajI1OE3OaTBIILpdyD4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "474130123278-6actgqbjcm656mblkhbaqdu6dfsrtpgc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

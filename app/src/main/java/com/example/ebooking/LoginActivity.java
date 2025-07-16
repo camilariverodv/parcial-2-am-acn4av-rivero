@@ -9,45 +9,70 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
-    private static final String CORRECT_EMAIL = "admin@gmail.com";
-    private static final String CORRECT_PASSWORD = "1234";
+
+    private EditText emailEditText;
+    private EditText passwordEditText;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        EditText emailEditText = findViewById(R.id.emailEditText);
-        EditText passwordEditText = findViewById(R.id.passwordEditText);
-
+        emailEditText = findViewById(R.id.emailEditText);
+        passwordEditText = findViewById(R.id.passwordEditText);
         Button loginSubmitButton = findViewById(R.id.loginSubmitButton);
+        ImageView backButton = findViewById(R.id.backButton);
+
+        // Firebase Auth
+        mAuth = FirebaseAuth.getInstance();
+
         loginSubmitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = emailEditText.getText().toString();
-                String password = passwordEditText.getText().toString();
-
-                if (email.isEmpty() || password.isEmpty()) {
-                    Toast.makeText(LoginActivity.this, "Debe completar todos los datos", Toast.LENGTH_SHORT).show();
-                } else {
-                    if (email.equals(CORRECT_EMAIL) && password.equals(CORRECT_PASSWORD)) {
-                        Intent intent = new Intent(LoginActivity.this, BookingActivity.class);
-                        startActivity(intent);
-                    } else {
-                        Toast.makeText(LoginActivity.this, "Credenciales incorrectas. Intenta nuevamente.", Toast.LENGTH_SHORT).show();
-                    }
-                }
+                loginUser();
             }
         });
 
-        ImageView backButton = findViewById(R.id.backButton);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getOnBackPressedDispatcher().onBackPressed();
             }
         });
+    }
+
+    private void loginUser() {
+        String email = emailEditText.getText().toString().trim();
+        String password = passwordEditText.getText().toString().trim();
+
+        if (email.isEmpty() || password.isEmpty()) {
+            Toast.makeText(LoginActivity.this, "Debe completar todos los datos", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Login Firebase
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            Intent intent = new Intent(LoginActivity.this, BookingActivity.class);
+                            startActivity(intent);
+                            finish();
+                        } else {
+                            Toast.makeText(LoginActivity.this, "Credenciales incorrectas. Intenta nuevamente.", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
     }
 }
