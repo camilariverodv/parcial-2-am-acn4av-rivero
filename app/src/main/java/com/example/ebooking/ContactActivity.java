@@ -33,7 +33,8 @@ public class ContactActivity extends AppCompatActivity {
                         emailEditText.getText().toString().isEmpty()) {
                     Toast.makeText(ContactActivity.this, "Debe completar todos los datos", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(ContactActivity.this, "¡Gracias! Nos pondremos en contacto a la brevedad", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ContactActivity.this, "¡Gracias! Nos pondremos en contacto a la brevedad",
+                            Toast.LENGTH_LONG).show();
                     restaurantNameEditText.setText("");
                     personalNameEditText.setText("");
                     emailEditText.setText("");

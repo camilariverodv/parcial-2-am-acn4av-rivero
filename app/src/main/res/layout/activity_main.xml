@@ -52,14 +52,14 @@
         android:id="@+id/contactButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Agregá tu restaurante"
+        android:backgroundTint="#ff2a40"
+        android:text="Registrate"
         app:layout_constraintBottom_toTopOf="@+id/questionTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.469"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/subtitleTextView"
-        app:layout_constraintVertical_bias="0.5"
-        android:backgroundTint="#ff2a40" />
+        app:layout_constraintVertical_bias="0.07" />
 
     <TextView
         android:id="@+id/questionTextView"

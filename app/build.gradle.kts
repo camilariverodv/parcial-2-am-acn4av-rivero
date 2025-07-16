@@ -39,6 +39,7 @@ dependencies {
     implementation("com.google.android.gms:play-services-tasks:18.2.0")
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.3")
     implementation("com.google.firebase:firebase-auth")
+    implementation("com.google.firebase:firebase-firestore:24.8.1")
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
