@@ -54,6 +54,19 @@ public class BookingActivity extends AppCompatActivity {
             bookingTitleTextView.setText("Reservas de tu restaurante");
         }
 
+        ImageView navLogo = findViewById(R.id.navLogo);
+        if (navLogo != null) {
+            navLogo.setImageResource(R.drawable.logout);
+            navLogo.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(BookingActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+            });
+        }
+
         // Simulo reservas
         bookings.add(new Booking("Camila Rivero", "7/12/2023", "21:00 hs", "4"));
         bookings.add(new Booking("Juan Pérez", "8/12/2023", "19:00 hs", "2"));
@@ -90,14 +103,7 @@ public class BookingActivity extends AppCompatActivity {
         }
 
         ImageView backButton = findViewById(R.id.backButton);
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(BookingActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
+        backButton.setVisibility(View.GONE);
     }
 
     private void renderBookings() {
