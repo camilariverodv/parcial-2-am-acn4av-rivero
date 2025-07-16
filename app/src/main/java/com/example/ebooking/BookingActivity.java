@@ -57,14 +57,6 @@ public class BookingActivity extends AppCompatActivity {
         ImageView navLogo = findViewById(R.id.navLogo);
         if (navLogo != null) {
             navLogo.setImageResource(R.drawable.logout);
-            navLogo.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(BookingActivity.this, MainActivity.class);
-                    startActivity(intent);
-                    finish();
-                }
-            });
         }
 
         // Simulo reservas
