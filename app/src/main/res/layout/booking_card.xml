@@ -17,8 +17,8 @@
             android:id="@+id/bookingDetailsTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Reserva a nombre de: Cliente\nFecha: Fecha\nHora: Hora\nCantidad de comensales: Cantidad"
-            android:textColor="#000000"
+            android:text="@string/booking_details"
+            android:textColor="@color/black"
             android:textSize="16sp" />
 
         <Button
@@ -26,12 +26,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:backgroundTint="#f2493d"
+            android:backgroundTint="@color/secondary_red"
             android:layout_gravity="end"
             android:paddingStart="15dp"
             android:paddingEnd="15dp"
-            android:text="Cancelar reserva"
-            android:textColor="#eeeeee"
+            android:text="@string/cancel_reservation"
+            android:textColor="@color/light_gray"
             android:textSize="16sp" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>

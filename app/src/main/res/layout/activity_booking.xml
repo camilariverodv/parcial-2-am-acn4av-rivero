@@ -24,10 +24,10 @@
             android:id="@+id/bookingListContainer">
 
             <TextView
-                android:id="@+id/loginTextView"
+                android:id="@+id/bookingTitleTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Mis reservas"
+                android:text="@string/booking_title"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:layout_marginTop="40dp"

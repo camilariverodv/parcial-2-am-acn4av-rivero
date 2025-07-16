@@ -1,0 +1,23 @@
+<resources>
+    <dimen name="margin_bottom_normal">16dp</dimen>
+    <dimen name="margin_bottom_large">50dp</dimen>
+    <dimen name="margin_top_large">50dp</dimen>
+    <dimen name="margin_top_normal">16dp</dimen>
+    <dimen name="margin_top_button">40dp</dimen>
+    <dimen name="margin_top_small">10dp</dimen>
+    <dimen name="margin_bottom_medium">35dp</dimen>
+    <dimen name="margin_top_medium">30dp</dimen>
+    <dimen name="padding_normal">16dp</dimen>
+    <dimen name="padding_small">12dp</dimen>
+    <dimen name="padding_button_start">15dp</dimen>
+    <dimen name="padding_button_end">15dp</dimen>
+    <dimen name="padding_horizontal">20dp</dimen>
+    <dimen name="text_size_title">24sp</dimen>
+    <dimen name="text_size_subtitle">16sp</dimen>
+    <dimen name="text_size_navbar">20sp</dimen>
+    <dimen name="image_size_logo">30dp</dimen>
+    <dimen name="image_size_header">100dp</dimen>
+    <dimen name="min_height_edittext">48dp</dimen>
+    <dimen name="margin_end_icon">12dp</dimen>
+    <dimen name="margin_start_nav">2dp</dimen>
+</resources>

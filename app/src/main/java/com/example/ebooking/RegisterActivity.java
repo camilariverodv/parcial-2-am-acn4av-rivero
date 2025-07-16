@@ -25,7 +25,7 @@ import android.util.Log;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private EditText nameEditText, lastNameEditText, emailEditText, passwordEditText;
+    private EditText nameEditText, lastNameEditText, emailEditText, passwordEditText, restaurantNameEditText;
     private Button registerSubmitButton;
 
     private FirebaseAuth mAuth;
@@ -40,6 +40,7 @@ public class RegisterActivity extends AppCompatActivity {
         emailEditText = findViewById(R.id.emailEditText);
         passwordEditText = findViewById(R.id.passwordEditText);
         registerSubmitButton = findViewById(R.id.registerSubmitButton);
+        restaurantNameEditText = findViewById(R.id.restaurantNameEditText);
 
         // Firebase Auth
         mAuth = FirebaseAuth.getInstance();
@@ -58,9 +59,10 @@ public class RegisterActivity extends AppCompatActivity {
         String lastName = lastNameEditText.getText().toString().trim();
         String email = emailEditText.getText().toString().trim();
         String password = passwordEditText.getText().toString();
+        String restaurantName = restaurantNameEditText.getText().toString().trim();
 
         if (TextUtils.isEmpty(name) || TextUtils.isEmpty(lastName) || TextUtils.isEmpty(email)
-                || TextUtils.isEmpty(password)) {
+                || TextUtils.isEmpty(password) || TextUtils.isEmpty(restaurantName)) {
             Toast.makeText(RegisterActivity.this, "Debe completar todos los datos", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -89,6 +91,7 @@ public class RegisterActivity extends AppCompatActivity {
                             user.put("name", name);
                             user.put("lastName", lastName);
                             user.put("email", email);
+                            user.put("restaurantName", restaurantName);
 
                             db.collection("users").document(userId)
                                     .set(user)

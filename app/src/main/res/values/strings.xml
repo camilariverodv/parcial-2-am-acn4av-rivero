@@ -1,3 +1,25 @@
 <resources>
+    <string name="booking_title">Reservas de ...</string>
+    <string name="register_title">Registrate</string>
+    <string name="name_hint">Nombre</string>
+    <string name="last_name_hint">Apellido</string>
+    <string name="restaurant_name_hint">Nombre del restaurante</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="register_button">Continuar</string>
+    <string name="main_title">eBooking</string>
+    <string name="main_subtitle">Aumentá tus pedidos y reservas</string>
+    <string name="main_register">Registrate</string>
+    <string name="main_question">¿Ya tenés cuenta?</string>
+    <string name="main_login">Inicia sesión</string>
+    <string name="login_title">Inicia sesión</string>
+    <string name="login_continue">Continuar</string>
+    <string name="contact_title">Ingresá tus datos</string>
+    <string name="personal_name_hint">Nombre y apellido</string>
+    <string name="send_button">Enviar</string>
+    <string name="cancel_button">Cancelar</string>
+    <string name="booking_details">Reserva a nombre de: Cliente\nFecha: Fecha\nHora: Hora\nCantidad de comensales: Cantidad</string>
+    <string name="cancel_reservation">Cancelar reserva</string>
+    <string name="navbar_title">eBooking</string>
     <string name="app_name">eBooking</string>
 </resources>

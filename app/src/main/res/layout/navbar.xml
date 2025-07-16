@@ -5,7 +5,7 @@
     android:orientation="horizontal"
     android:padding="10dp"
     android:gravity="center_vertical"
-    android:background="#ff2a40">
+    android:background="@color/primary_red">
 
     <ImageView
         android:id="@+id/backButton"
@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
-        android:text="eBooking"
-        android:textColor="#FFFFFF"
+        android:text="@string/navbar_title"
+        android:textColor="@color/white"
         android:textSize="20sp" />
 </LinearLayout>

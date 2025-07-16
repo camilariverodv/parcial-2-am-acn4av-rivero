@@ -15,14 +15,44 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 public class BookingActivity extends AppCompatActivity {
     private List<Booking> bookings = new ArrayList<>();
     private LinearLayout bookingListContainer;
+    private FirebaseAuth mAuth;
+    private FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking);
+
+        mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
+        final TextView bookingTitleTextView = findViewById(R.id.bookingTitleTextView);
+        String userId = mAuth.getCurrentUser() != null ? mAuth.getCurrentUser().getUid() : null;
+        if (userId != null) {
+            db.collection("users").document(userId).get().addOnSuccessListener(new com.google.android.gms.tasks.OnSuccessListener<DocumentSnapshot>() {
+                @Override
+                public void onSuccess(DocumentSnapshot documentSnapshot) {
+                    if (documentSnapshot.exists()) {
+                        String restaurantName = documentSnapshot.getString("restaurantName");
+                        if (restaurantName != null && !restaurantName.isEmpty()) {
+                            bookingTitleTextView.setText("Reservas de '" + restaurantName + "'");
+                        } else {
+                            bookingTitleTextView.setText("Reservas de tu restaurante");
+                        }
+                    } else {
+                        bookingTitleTextView.setText("Reservas de tu restaurante");
+                    }
+                }
+            });
+        } else {
+            bookingTitleTextView.setText("Reservas de tu restaurante");
+        }
 
         // Simulo reservas
         bookings.add(new Booking("Camila Rivero", "7/12/2023", "21:00 hs", "4"));

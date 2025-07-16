@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:text="Ingresá tus datos"
+            android:text="@string/contact_title"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -32,21 +32,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:hint="Nombre del restaurante" />
+            android:hint="@string/restaurant_name_hint" />
 
         <EditText
             android:id="@+id/personalNameEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:hint="Nombre y apellido" />
+            android:hint="@string/personal_name_hint" />
 
         <EditText
             android:id="@+id/emailEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:hint="Email"
+            android:hint="@string/email_hint"
             android:inputType="textEmailAddress" />
 
         <Button
@@ -54,15 +54,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:text="Enviar"
-            android:backgroundTint="#ff2a40" />
+            android:text="@string/send_button"
+            android:backgroundTint="@color/primary_red" />
 
         <Button
             android:id="@+id/cancelButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Cancelar"
-            android:backgroundTint="#ff2a40" />
+            android:text="@string/cancel_button"
+            android:backgroundTint="@color/primary_red" />
     </LinearLayout>
 </LinearLayout>
